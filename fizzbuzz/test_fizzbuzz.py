@@ -10,5 +10,11 @@ class TestFizzBuzz(TestCase):
         self.assertEqual(fizzbuzz(4), 4)
 
     def test_fizz(self):
+        """test divisibility by 3"""
         self.assertEqual(fizzbuzz(3), "Fizz")
         self.assertEqual(fizzbuzz(18), "Fizz")
+
+    def test_buzz(self):
+        """test divisibility by 5"""
+        self.assertEqual(fizzbuzz(5), "Buzz")
+        self.assertEqual(fizzbuzz(10), "Buzz")
