@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 from unittest import TestCase
+from mock import MagicMock, patch
 from fizzbuzz.fizzbuzz import fizzbuzz
+from fizzbuzz.fizzbuzz import main
 
 
 class TestFizzBuzz(TestCase):
@@ -25,3 +27,14 @@ class TestFizzBuzz(TestCase):
 
     def test_not_integer(self):
         self.assertRaises(TypeError, fizzbuzz, "a")
+
+
+def test_main():
+    mock = MagicMock()
+    with patch('builtins.print', new=mock):
+        main()
+    mock.assert_any_call(1)
+    mock.assert_any_call("Fizz")
+    mock.assert_any_call("Buzz")
+    mock.assert_any_call("FizzBuzz")
+    mock.assert_any_call(16)
