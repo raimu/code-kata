@@ -22,3 +22,6 @@ class TestFizzBuzz(TestCase):
     def test_fizzbuzz(self):
         """test divisibility by 3 and 5"""
         self.assertEqual(fizzbuzz(15), "FizzBuzz")
+
+    def test_not_integer(self):
+        self.assertRaises(TypeError, fizzbuzz, "a")
