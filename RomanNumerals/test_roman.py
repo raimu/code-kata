@@ -1,5 +1,6 @@
 #!/usr/bin/python
-from RomanNumerals.roman import to_roman
+from RomanNumerals.roman import to_roman, RomanNumeralsError
+import pytest
 
 
 ARABIC_TO_ROMAN = [
@@ -30,3 +31,12 @@ ARABIC_TO_ROMAN = [
 def test_to_roman():
     for arabic, roman in ARABIC_TO_ROMAN:
         assert to_roman(arabic) == roman
+
+
+def test_to_roman_with_null():
+    with pytest.raises(RomanNumeralsError):
+        to_roman(0)
+
+def test_to_roman_with_5000():
+    with pytest.raises(RomanNumeralsError):
+        to_roman(5000)

@@ -1,7 +1,13 @@
 #!/usr/bin/env python
 
 
+class RomanNumeralsError(Exception):
+    pass
+
+
 def to_roman(number):
+    if number <= 0 or number >= 5000:
+        raise RomanNumeralsError("Number out of allowed range (1-4999)")
     result = ""
     for roman, arabic in [("M", 1000), ("CM", 900), ("D", 500), ("CD", 400),
                           ("C", 100), ("XC", 90), ("L", 50), ("XL", 40),
