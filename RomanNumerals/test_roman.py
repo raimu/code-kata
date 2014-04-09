@@ -33,10 +33,16 @@ def test_to_roman():
         assert to_roman(arabic) == roman
 
 
-def test_to_roman_with_null():
+def test_to_roman_with_zero():
     with pytest.raises(RomanNumeralsError):
         to_roman(0)
 
-def test_to_roman_with_5000():
+
+def test_to_roman_to_large():
     with pytest.raises(RomanNumeralsError):
         to_roman(5000)
+
+
+def test_to_roman_with_float():
+    with pytest.raises(RomanNumeralsError):
+        to_roman(0.5)
