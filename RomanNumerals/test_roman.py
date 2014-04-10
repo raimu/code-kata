@@ -1,5 +1,5 @@
 #!/usr/bin/python
-from RomanNumerals.roman import to_roman, RomanNumeralsError
+from RomanNumerals.roman import to_roman, RomanNumeralsError, from_roman
 import pytest
 
 
@@ -51,3 +51,8 @@ def test_to_roman_with_float():
 def test_to_roman_with_string():
     with pytest.raises(RomanNumeralsError):
         to_roman("Hello")
+
+
+def test_from_roman():
+    for arabic, roman in ARABIC_TO_ROMAN:
+        assert from_roman(roman) == arabic
