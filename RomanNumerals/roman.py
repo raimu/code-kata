@@ -6,7 +6,10 @@ class RomanNumeralsError(Exception):
 
 
 def to_roman(number):
-    if int(number) != number:
+    try:
+        if int(number) != number:
+            raise RomanNumeralsError("only integer allowed")
+    except ValueError:
         raise RomanNumeralsError("only integer allowed")
     if number <= 0 or number >= 5000:
         raise RomanNumeralsError("number out of allowed range (1-4999)")
