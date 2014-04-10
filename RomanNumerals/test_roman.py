@@ -46,3 +46,8 @@ def test_to_roman_to_large():
 def test_to_roman_with_float():
     with pytest.raises(RomanNumeralsError):
         to_roman(0.5)
+
+
+def test_to_roman_with_string():
+    with pytest.raises(RomanNumeralsError):
+        to_roman("Hello")
