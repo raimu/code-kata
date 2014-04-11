@@ -28,13 +28,8 @@ def to_roman(number):
 
 def from_roman(roman_number):
     result = 0
-    while roman_number:
-        any_match = False
-        for roman, arabic in ROMAN_ARABIC_MAP:
-            if roman_number.startswith(roman):
-                roman_number = roman_number[len(roman):]
-                result += arabic
-                any_match = True
-        if not any_match:
-            break
+    for roman, arabic in ROMAN_ARABIC_MAP:
+        while roman_number[:len(roman)] == roman:
+            roman_number = roman_number[len(roman):]
+            result += arabic
     return result
