@@ -32,4 +32,6 @@ def from_roman(roman_number):
         while roman_number[:len(roman)] == roman:
             roman_number = roman_number[len(roman):]
             result += arabic
+    if result == 0:
+        raise RomanNumeralsError("cannot convert string to number")
     return result
