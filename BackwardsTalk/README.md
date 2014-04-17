@@ -1,0 +1,1 @@
+Exercise from http://codingkata.net/Katas/Beginner/BackwardsTalk
