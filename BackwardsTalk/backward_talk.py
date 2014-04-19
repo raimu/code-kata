@@ -1,13 +1,10 @@
 #!/usr/bin/env python
+import re
 
 
 def revert(text):
     result = []
-    for line in text.split('\n'):
-        new_line = []
-        for word in line.split(' '):
-            revert_word = [i for i in word]
-            revert_word.reverse()
-            new_line.append(''.join(revert_word))
-        result.append('\n'.join(new_line))
-    return str('\n'.join(result))
+    for word, space in re.findall(r'([^\s]*)(\s*)', text):
+        result.append(''.join([i for i in reversed(word)]))
+        result.append(space)
+    return str(''.join(result))
