@@ -8,3 +8,7 @@ def test_revert_word():
 
 def test_multiple_words():
     assert 'olleH dlroW' == revert('Hello World')
+
+
+def test_multiple_lines():
+    assert 'olleH\ndlroW' == revert('Hello\nWorld')
