@@ -56,3 +56,8 @@ def test_to_roman_with_string():
 def test_from_roman():
     for arabic, roman in ARABIC_TO_ROMAN:
         assert from_roman(roman) == arabic
+
+
+def test_from_roman_with_invalid_number():
+    with pytest.raises(RomanNumeralsError):
+        from_roman("ABC")
