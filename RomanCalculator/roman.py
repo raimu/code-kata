@@ -30,3 +30,12 @@ class Roman(object):
                 result += arabic
                 number = number[len(roman):]
         return result
+
+    def __str__(self):
+        result = ""
+        number = self.number
+        for arabic, roman in self.arabic_roman_map:
+            while number >= arabic:
+                result += roman
+                number -= arabic
+        return result
