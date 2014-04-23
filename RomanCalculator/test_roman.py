@@ -31,3 +31,13 @@ def test_roman_string_to_int():
 def test_roman_int_to_string():
     for arabic, roman in ARABIC_TO_ROMAN:
         assert str(Roman(arabic)) == roman
+
+
+def test_roman_string_to_string():
+    for arabic, roman in ARABIC_TO_ROMAN:
+        assert str(Roman(roman)) == roman
+
+
+def test_roman_int_to_int():
+    for arabic, roman in ARABIC_TO_ROMAN:
+        assert int(Roman(arabic)) == arabic

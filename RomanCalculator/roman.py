@@ -20,20 +20,27 @@ class Roman(object):
     ]
 
     def __init__(self, number):
-        self.number = number
+        try:
+            self._number = int(number)
+        except ValueError:
+            self._number = self._to_int(number)
 
     def __int__(self):
-        result = 0
-        number = self.number
-        for arabic, roman in self.arabic_roman_map:
-            while number.startswith(roman):
-                result += arabic
-                number = number[len(roman):]
-        return result
+        return self._number
 
     def __str__(self):
+        return self._to_string(self._number)
+
+    def _to_int(self, roman_number):
+        result = 0
+        for arabic, roman in self.arabic_roman_map:
+            while roman_number.startswith(roman):
+                result += arabic
+                roman_number = roman_number[len(roman):]
+        return result
+
+    def _to_string(self, number):
         result = ""
-        number = self.number
         for arabic, roman in self.arabic_roman_map:
             while number >= arabic:
                 result += roman
