@@ -31,6 +31,9 @@ class Roman(object):
     def __str__(self):
         return self._to_string(self._number)
 
+    def __eq__(self, other):
+        return self._number == int(other)
+
     def _to_int(self, roman_number):
         result = 0
         for arabic, roman in self.arabic_roman_map:
