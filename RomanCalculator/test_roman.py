@@ -43,9 +43,9 @@ def test_roman_int_to_int():
         assert int(Roman(arabic)) == arabic
 
 
-def test_roman_eq():
+def test_compare_eq():
     assert Roman("IV") == Roman(4)
 
 
-def test_roman_not_eq():
-    assert False == (Roman("III") == Roman(4))
+def test_compare_ne():
+    assert Roman("III") != Roman(4)
