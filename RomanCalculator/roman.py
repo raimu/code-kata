@@ -23,7 +23,7 @@ class Roman(object):
         try:
             self._number = int(number)
         except ValueError:
-            self._number = self._to_int(number)
+            self._number = self._to_int(number.upper())
 
     def __int__(self):
         return self._number
