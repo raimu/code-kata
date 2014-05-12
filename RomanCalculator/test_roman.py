@@ -70,3 +70,7 @@ def test_compare_le():
 
 def test_compare_ge():
     assert Roman("I") >= 1
+
+
+def test_plus():
+    assert Roman("I") + 1 == Roman("II")
