@@ -34,6 +34,18 @@ class Roman(object):
     def __eq__(self, other):
         return self._number == int(other)
 
+    def __lt__(self, other):
+        return self._number < int(other)
+
+    def __le__(self, other):
+        return self._number <= int(other)
+
+    def __gt__(self, other):
+        return self._number > int(other)
+
+    def __ge__(self, other):
+        return self._number >= int(other)
+
     def _to_int(self, roman_number):
         result = 0
         for arabic, roman in self.arabic_roman_map:

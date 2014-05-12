@@ -54,3 +54,19 @@ def test_compare_eq():
 
 def test_compare_ne():
     assert Roman("III") != Roman(4)
+
+
+def test_compare_lt():
+    assert Roman("III") < 4
+
+
+def test_compare_gt():
+    assert Roman("IV") > 3
+
+
+def test_compare_le():
+    assert Roman("I") <= 1
+
+
+def test_compare_ge():
+    assert Roman("I") >= 1
