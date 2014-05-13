@@ -74,3 +74,7 @@ def test_compare_ge():
 
 def test_plus():
     assert Roman("I") + 1 == Roman("II")
+
+
+def test_minus():
+    assert Roman("IV") - 1 == Roman("III")
