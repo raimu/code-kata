@@ -82,3 +82,7 @@ def test_minus():
 
 def test_multiplication():
     assert Roman("II") * 2 == Roman("IV")
+
+
+def test_division():
+    assert Roman("IV") / 2 == Roman("II")

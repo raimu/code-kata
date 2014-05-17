@@ -55,6 +55,9 @@ class Roman(object):
     def __mul__(self, other):
         return Roman(self._number * int(other))
 
+    def __truediv__(self, other):
+        return Roman(self._number / int(other))
+
     def _to_int(self, roman_number):
         result = 0
         for arabic, roman in self.arabic_roman_map:
