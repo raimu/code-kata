@@ -86,3 +86,7 @@ def test_multiplication():
 
 def test_division():
     assert Roman("IV") / 2 == Roman("II")
+
+
+def test_modulo():
+    assert Roman("III") % 2 == Roman("I")
