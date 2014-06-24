@@ -90,3 +90,7 @@ def test_division():
 
 def test_modulo():
     assert Roman("III") % 2 == Roman("I")
+
+
+def test_pow():
+    assert Roman("2") ** 2 == Roman("IV")
